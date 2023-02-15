@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>Javascript Assignment 2 - DOM Manipulation</title>
+        <style>
+            .formDiv {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                position: absolute;
+                width:500px;
+                top: 50%;
+                left: 50%;
+                height:250px;
+                transform: translate(-50%, -50%);
+                border:1px solid black;
+                padding:10px;
+                border-radius: 15px;
+              }
+            .flexDiv {
+                display:flex;
+                width:100%;
+                margin-bottom: .5em;
+            }
+            label {
+                margin-right:1em;
+            } 
+            span{
+                display:flex;
+                padding:5px;
+                margin-bottom:.5em;
+            }
+            button {
+                margin-left:.5em;
+                cursor:pointer;
+            }
+            input[type="text"]{
+                border: 1px solid #cccccc;
+              }
+        </style>
+    </head>
+    <body>
+        <div class="formDiv">
+            <div class="flexDiv">
+                <label>Enter some data here:</label>
+                <input type="text" id="text1"/>
+                <button onclick="moveData(1,1)">Move Data</button>
+            </div>
+            <span id="movedData1"></span>
+            <div class="flexDiv">
+                <label>Enter more data here:</label>
+                <input type="text" id="text2"/>
+                <button onclick="moveData(2,2)">Move Data</button>
+            </div>
+            <span id="movedData2"></span>
+            <div class="flexDiv">
+                <label>Enter even more data here:</label>
+                <input type="text" id="text3"/>
+                <button onclick="moveData(3,3)">Move Data</button>
+            </div>
+            <span id="movedData3"></span>
+        </div>
+    </body>
+    <script>
+        function moveData(textNum, spanNum){
+            document.getElementById("movedData" + spanNum).innerHTML = document.getElementById("text"+textNum).value
+        }
+    </script>
+</html>
